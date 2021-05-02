@@ -45,7 +45,7 @@ Check AirFlow UI at http://localhost:8282/admin/
 
 **Configure**
 
-* login to [Kinetica](http://localhost:8080) user: admin password: admin
+* login to [Kinetica](http://localhost:8080) user: **admin** password: **admin**
 	* Activate a Kinetica License and start `Admin -> Start` and `Start` again
 	* Logout and log back in - change password to `KineticaFlow1!`
 
