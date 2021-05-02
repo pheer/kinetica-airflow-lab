@@ -28,7 +28,7 @@ The CDAP and spark containers are included in a separate docker compose file, bu
 3. Open command line and run `docker --version` and `docker-compose --version` to make sure both installed corretly
 4. Run `docker ps` to make sure docker is able to connect to engine and list any running containers.  If this is new install there should be no containers listed
 5. Change into lab working directory and start stack
-	* `cd kinetica-airflow-lab.git`
+	* `cd kinetica-airflow-lab`
 	* `docker-compose up`  or `docker-compose up -d` to run in detached or background mode
 
 It will take a while to download containers if this is the first time running the stack.  
