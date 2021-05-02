@@ -101,5 +101,5 @@ CREATE TABLE "ki_home"."us_counties"
 
 See video below on how to run the Kinetica ingest job from airflow UI.
 
-![](img/run-ingest.mp4)
+![](img/run-ingest.gif)
 
