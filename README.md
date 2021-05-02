@@ -105,7 +105,7 @@ See video below on how to run the Kinetica ingest job from airflow UI.
 
 ---
 
-The dag file holds the high level configuration of the job: `kinetica_ingest_dag.py` under `dags` folder.  See more on scheduling jobs (run every night at 8PM).  check [here](https://airflow.apache.org/docs/apache-airflow/1.10.1/scheduler.html)
+The dag file holds the high level configuration of the job: `kinetica_ingest_dag.py` under `dags` folder.  See more on scheduling jobs (for example, how to run a job every night at 8PM).  check [here](https://airflow.apache.org/docs/apache-airflow/1.10.1/scheduler.html)
 
 Take a look at the `kinetica_ingest.py` file under spark/app.  This file reads the CSV file using the following line:
 
