@@ -103,3 +103,26 @@ See video below on how to run the Kinetica ingest job from airflow UI.
 
 ![](img/run-ingest.gif)
 
+---
+
+
+Take a look at the `kinetica_ingest.py` file under spark/app.  This file reads the CSV file using the following line:
+
+```python
+    df = spark.read.format("csv").option("header", "true").load(appOpts.get('input_dir'))
+
+```
+
+Once the data is loaded into a Spark data frame it can be written to Kinetica using the following line:
+
+```python
+    df.write.format("com.kinetica.spark").options(**kineticaIngest).save()
+
+```
+
+The write method uses the Kinetica Spark connector to do write the dataframe to Kinetica.
+
+
+Take a look at the configuration for the job at `spark/app/conf.py`.  Notice the section `kineticaIngest`,  here is where Kinetica connection information is configured.
+
+If an Airflow job fails - click the read failed job circle in UI and clear task to retry job.
