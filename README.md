@@ -16,7 +16,7 @@ The entire project is built with Docker containers and linked using a customer D
 * CDAP (Optional)
 * Spark Master/Worker (Optional)
 
-The CDAP and spark containers are included in a separate docker compose file, but not used during this lab.  In this lap the Spark environment is included in the AirFlow container therefore separate containers will not be used - this is known as Local spark mode.  If you would like to run in Spark standalone mode then the  master and worker containers can be used.  To learn more about spark standalone mode check out this link: [Spark Standalone](https://spark.apache.org/docs/2.4.0/spark-standalone.html)
+The CDAP and spark containers are included in a separate docker compose file, but not used during this lab.  In this lab the Spark environment is included in the Airflow container therefore separate containers will not be used - this is known as Local spark mode.  If you would like to run in Spark standalone mode then the  master and worker containers can be used.  To learn more about spark standalone mode check out this link: [Spark Standalone](https://spark.apache.org/docs/2.4.0/spark-standalone.html)
 
 ---
 
