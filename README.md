@@ -120,7 +120,7 @@ Once the data is loaded into a Spark data frame it can be written to Kinetica us
 
 ```
 
-The write method uses the Kinetica Spark connector to do write the dataframe to Kinetica.
+The write method uses the Kinetica Spark connector to write the dataframe to Kinetica.  This connector handles all the mapping and Kinetica specific ingest details.  See [Kinetica Spark Connector](https://github.com/kineticadb/kinetica-connector-spark) for more details.
 
 
 Take a look at the configuration for the job at `spark/app/conf.py`.  Notice the section `kineticaIngest`,  here is where Kinetica connection information is configured.
