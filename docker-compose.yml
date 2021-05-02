@@ -1,0 +1,64 @@
+version: "3.9"
+services:
+
+  # postgres used by airflow
+  postgres:
+    image: psheer/postgis:12.1
+    container_name: postgres_container
+    networks:
+      - default_net
+    hostname: postgres
+    volumes:
+      - ./db_scripts3/pg-init-scripts:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASS=airflow
+      - POSTGRES_DBNAME=airflow
+      - ALLOW_IP_RANGE=0.0.0.0/0
+    ports:
+      - "5432:5432"
+
+  # airflow LocalExecutor
+  airflow-webserver:
+    image: psheer/airflow-spark:2.4.7_1.10.14_265
+    container_name: airflow_container
+    restart: always
+    networks:
+      - default_net
+    depends_on:
+      - postgres
+    environment:
+      - LOAD_EX=n
+      - EXECUTOR=Local
+      - FERNET_KEY=v-STCavygWLUfWPZaSMvDwh0iIpMNxJddcvzq74Fz5c=
+
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./spark/app:/app
+      - ./spark/resources/data:/data
+      - ./spark/resources/libs:/libs
+    ports:
+      - "8282:8282"
+    command: webserver
+
+  kinetica:
+    image: kinetica/kinetica-intel:7.1.3
+    networks:
+      - default_net
+    ports:
+     - "8080:8080"
+    # - "18181:8181"
+     - "9191:9191"
+     - "9192:9192"
+     - "8088:8088"
+     - "9002:9002"
+    container_name: kinetica_container
+
+    environment:
+      FULL_START: 0
+
+    volumes:
+      - ./local-persist:/opt/gpudb/persist
+
+networks:
+    default_net:

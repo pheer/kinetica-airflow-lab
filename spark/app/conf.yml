@@ -1,0 +1,45 @@
+######
+# spark master in EMR, cloudera etc. master would be yarn
+######
+sparkMaster: local
+
+appOpts:
+  input_dir: /data/us_counties.csv
+  output_dir: /no/used
+  output_rows_per_file: 10000000
+  repartition: 1
+
+# defines jdbc properties to put the data into
+# For full list of options See: https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html
+relationalOpts:
+   url: jdbc:postgresql://host/blah
+   dbtable: schema.table
+   user: user
+   password: PASS
+   driver: org.postgresql.Driver
+   numPartitions: 100
+   #batchsize: 500
+   inferSchema: false
+
+sparkOpts:
+  spark.driver.memory: 8g
+  spark.executor.memory: 4g
+  spark.memory.offHeap.enabled: true
+  spark.memory.offHeap.size: 4g
+
+hadoopOpts:
+   parquet.block.size: "268435456"
+
+# This section defines the kinetica connection and Egress configuration
+# For full list of options See: https://www.kinetica.com/docs/connectors/spark_guide.html#property-reference for full list of valid options
+kineticaIngest:
+   database.url: http://kinetica_container:9191
+   database.jdbc_url: jdbc:kinetica://kinetica_container:9191;ParentSet=test
+   database.username: admin
+   database.password: KineticaFlow1!
+   table.truncate: true
+   table.name: us_counties
+   table.create: false
+   spark.num_partitions: 100
+   ingester.batch_size: 50000
+   map_columns_by_name: false
