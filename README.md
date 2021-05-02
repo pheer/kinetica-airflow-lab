@@ -125,4 +125,8 @@ The write method uses the Kinetica Spark connector to write the dataframe to Kin
 
 Take a look at the configuration for the job at `spark/app/conf.py`.  Notice the section `kineticaIngest`,  here is where Kinetica connection information is configured.
 
-If an Airflow job fails - click the read failed job circle in UI and clear task to retry job.
+If an Airflow job fails - click the red failed job circle in Airflow UI and clear task to retry/rerun job.  
+
+---
+
+
