@@ -12,7 +12,7 @@ The entire project is built with Docker containers and linked using a customer D
 
 * Airflow
 * Kinetica
-* Postgis
+* Postgres (for airflow backend)
 * CDAP (Optional)
 * Spark Master/Worker (Optional)
 
