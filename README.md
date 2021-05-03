@@ -33,7 +33,7 @@ The CDAP and spark containers are included in a separate docker compose file, bu
 
 It will take a while to download containers if this is the first time running the stack.  
 
-`docker-compose ps` should show our three running containers:
+`docker-compose ps` should show three running containers:
 
 ![minipic](img/docker-compose-ps.png)
 
