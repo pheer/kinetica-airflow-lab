@@ -6,7 +6,7 @@ Kinetica ETL lab walkthrough using Airflow & Spark in Docker containers.
 ## Lab Introduction
 In this lab you will ingest geometric data into Kinetica using AirFlow.  The data is a simple CSV file of all counties in US.
 
-The entire project is built with Docker containers and linked using a customer Docker network.  To read more on this take a look here [Docker Custom Network](https://docs.docker.com/compose/networking/#specify-custom-networks)
+The entire project is built with Docker containers and linked using a custom Docker network.  To read more on this take a look here [Docker Custom Network](https://docs.docker.com/compose/networking/#specify-custom-networks)
 
 ### Services in this Lab
 
