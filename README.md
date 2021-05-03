@@ -1,6 +1,6 @@
 # Kinetica Airflow Lab
 
-Kinetica ETL lab using docker containers and Airflow
+Kinetica ETL lab using Airflow & Spark using Docker containers.
 
 
 ## Lab Introduction
